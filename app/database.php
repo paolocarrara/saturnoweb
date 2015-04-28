@@ -8,7 +8,7 @@
 	$connection = null;
 
 	try {
-		$connection = new PDO ("pgsql:host=ec2-54-163-238-169.compute-1.amazonaws.com;dbname=wrrjbvwfoyjioh", $username, $password);
+		$connection = new PDO ("pgsql:host=ec2-54-163-238-169.compute-1.amazonaws.com;dbname=de73f59ql11316", $username, $password);
 		$connection->setAttribute (PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 	catch (PDOException $e) {
