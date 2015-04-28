@@ -1,11 +1,14 @@
 <?php
-	$username = 'pcarrara';
-	$password = '010502537';
+	$hostname = 'ec2-54-163-238-169.compute-1.amazonaws.com';
+	$username = 'wrrjbvwfoyjioh';
+	$password = 'NlpYXLpBGI39EOg4_zZLaGlmgo';
+	$databaseName = 'de73f59ql11316';
+	$port = '5432';
 
 	$connection = null;
 
 	try {
-		$connection = new PDO ('mysql:host=localhost;dbname=saturnoweb', $username, $password);
+		$connection = new PDO ("pgsql:host=$hostname;port=$port;dbname=$databaseName", $username, $password);
 		$connection->setAttribute (PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 	catch (PDOException $e) {
