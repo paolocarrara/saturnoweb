@@ -1,7 +1,7 @@
 <?php
 	$hostname = 'ec2-54-163-238-169.compute-1.amazonaws.com';
-	$username = 'wrrjbvwfoyjioh';
-	$password = 'NlpYXLpBGI39EOg4_zZLaGlmgo';
+	$username = getenv ('PG_USER');
+	$password = getenv ('PG_PASSWORD');
 	$databaseName = 'de73f59ql11316';
 	$port = '5432';
 
