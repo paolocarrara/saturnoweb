@@ -120,7 +120,7 @@
 			$hash = password_hash ($student->getPassword (), PASSWORD_BCRYPT);
 			$email = $student->getEmail ();
 
-			$statement = $connection->prepare ('INSERT INTO students values (:email, :hash)');
+			$statement = $connection->prepare ('INSERT INTO students (email, password) values (:email, :hash)');
 			$statement->execute (array('email' => "$email", 'hash' => "$hash"));
 		}
 	}
