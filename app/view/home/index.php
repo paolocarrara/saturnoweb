@@ -18,8 +18,8 @@
 				}
 				else {
 					echo 'Registre-se para avaliar os professores! <br>';
-					echo '<a href='.$data['signup']>.'Registrar</a> / ';
-					echo '<a href='.$data['signin']>.'Entrar</a>';
+					echo '<a href='.$data['signup'].'>Registrar</a> / ';
+					echo '<a href='.$data['signin'].'>Entrar</a>';
 				}
 			?>
 		</p>
