@@ -6,8 +6,6 @@
 
 	class Home extends Controller {
 
-		public $comida = 'foot';
-
 		public function index () {
 
 			$model = $this->model ('professors');	
@@ -16,7 +14,8 @@
 			$professorsRatings = $model->getProfessorsRatings ();
 
 			$data = [
-				'register' => '?url=home/signup',
+				'signup' => '?url=home/signup',
+				'signin' => '?url=home/signin',
 				'signout' => '?url=home/signout',
 				'professorTableHeader' => 'Professor',
 				'gradesTableHeader' => 'Avalição',
@@ -46,13 +45,32 @@
 			$this->view ('home/signup', $data);
 		}
 
+		public function signin () {
+			$data = [
+				'back' => '?url=home/index',
+				'action' => '?url=home/signinForm',
+				'method' => 'POST',
+				'formName' => 'signinForm',
+				'emailInputId' => 'email',
+				'emailInputName' => 'email',
+				'passwordInputId' => 'password',
+				'passwordInputName' => 'password',
+				'submit' => 'submitSigninForm',
+			];
+
+			$this->view ('home/signin', $data);
+		}
+
 		public function signupForm () {
 			$this->view ('home/signupForm', []);
+		}
+
+		public function signinForm () {
+			$this->view ('home/signinForm', []);
 		}
 
 		public function signout () {
 			$this->view ('home/signout', []);
 		}
-
 	}
 ?>
