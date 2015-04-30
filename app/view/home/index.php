@@ -13,12 +13,13 @@
 		<p>
 			<?php 
 				if ( isset ($_SESSION['loggedin']) and ($_SESSION['loggedin'] == true) ) {
-					echo 'Bem vindo ';
+					echo 'Bem vindo '.$_SESSION['email'];
 					echo '<a href='."$data[signout]>".'Sair</a>';
 				}
 				else {
-					echo 'Registre-se para avaliar os professores!';
-					echo '<a href='."$data[register]>".'Registrar</a>';
+					echo 'Registre-se para avaliar os professores! <br>';
+					echo '<a href='."$data[signup]>".'Registrar</a> / ';
+					echo '<a href='."$data[signin]>".'Entrar</a>';
 				}
 			?>
 		</p>
