@@ -33,9 +33,9 @@
 		<input required autofocus
 			type='email'
 			id="<?php echo $data['emailInputId']; ?>"
+			name="<?php echo $data['emailInputName']; ?>"
 			style="width: 30%; margin:0 auto"
 			class="form-control"
-			name="<?php echo $data['emailInputName']; ?>"
 			tabindex='1'
 			placeholder="<?php echo $data['emailInputPlaceHolderText']; ?>"
 			title="<?php echo $data['emailInputTitle']; ?>"
@@ -49,9 +49,9 @@
 		<input required
 			type='password'
 			id="<?php echo $data['passwordInputId']; ?>"
+			name="<?php echo $data['passwordInputName']; ?>"
 			style="width: 30%; margin:0 auto"
 			class="form-control"
-			name="<?php echo $data['passwordInputName']; ?>"
 			tabindex='2'
 			placeholder="<?php echo $data['passwordInputPlaceHolderText']; ?>"
 			title="<?php echo $data['passwordInputTitle']; ?>"
