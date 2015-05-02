@@ -1,0 +1,14 @@
+li {
+	list-style-type: none;
+}
+input[type="range"] {
+	width: 10%;
+	height: 130px;
+	float: left;
+}
+.jumbotron {
+	overflow: hidden;
+}
+.centralizedTdContent {
+	text-align: center;
+}

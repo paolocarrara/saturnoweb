@@ -20,6 +20,17 @@
 			return $this->password;
 		}
 
+		public static function getStudentIdByEmail ($email) {
+
+			require '../app/database.php';
+
+			$statement = $connection->prepare ("SELECT id FROM students WHERE email = :email");
+			$statement->execute ( array ('email'=>"$email") );
+			$row = $statement->fetch (PDO::FETCH_ASSOC);
+
+			return $row['id'];
+		}
+
 		public static function validateStudentSignin ($email, $password) {
 			if ( Student::validateStudentSigninEmail ($email) ) {
 				if ( Student::validateStudentSigninPassword ($email, $password) ) {

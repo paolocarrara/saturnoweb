@@ -15,6 +15,7 @@
 			/* Starts the session variables */
 			$_SESSION['email'] = $student->getEmail ();
 			$_SESSION['loggedin'] = true;
+			$_SESSION['id'] = Student::getStudentIdByEmail ($_POST['email']);
 
 			/* Unset the variables associated to the form */
 			unset ($_POST['email']);

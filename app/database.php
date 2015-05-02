@@ -1,10 +1,12 @@
 <?php
+
 	$dbDriver = getenv ('DBDRIVER');
 	$hostname = getenv ('HOSTNAME');
 	$username = getenv ('PG_USER');
 	$userPassword = getenv ('PG_PASSWORD');
 	$databaseName = 'de73f59ql11316';
 	$port = '5432';
+	$connection = null;
 
 	try {
 		$connection = new PDO ("$dbDriver:host=$hostname;dbname=$databaseName", $username, $userPassword);
