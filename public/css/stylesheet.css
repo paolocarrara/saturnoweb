@@ -12,3 +12,6 @@ input[type="range"] {
 .centralizedTdContent {
 	text-align: center;
 }
+.verticalSlider {
+	-webkit-appearance: slider-vertical;
+}
