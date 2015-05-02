@@ -111,6 +111,7 @@
 					min="0" max="5" 
 					value="2.5" 
 					step="0.1" 
+					class="verticalSlider"
 					orient="vertical">
 					</input></td>
 
@@ -121,6 +122,7 @@
 					min="0" max="5"
 					value="2.5"
 					step="0.1"
+					class="verticalSlider"
 					orient="vertical">
 					</input></td>
 
@@ -131,6 +133,7 @@
 					min="0" max="5"
 					value="2.5"
 					step="0.1"
+					class="verticalSlider"
 					orient="vertical">
 					</input></td>
 
@@ -141,6 +144,7 @@
 					min="0" max="5"
 					value="2.5"
 					step="0.1"
+					class="verticalSlider"
 					orient="vertical">
 					</input></td>
 
@@ -151,6 +155,7 @@
 					min="0" max="5"
 					value="2.5"
 					step="0.1"
+					class="verticalSlider"
 					orient="vertical">
 					</input></td>
 
@@ -161,6 +166,7 @@
 					min="0" max="5"
 					value="2.5"
 					step="0.1"
+					class="verticalSlider"
 					orient="vertical">
 					</input></td>
 				</tr>
