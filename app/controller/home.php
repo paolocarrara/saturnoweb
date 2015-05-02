@@ -42,16 +42,24 @@
 
 		public function signup () {
 			$data = [
+				'pageTitle' => 'Registrar',
+				'brandName' => 'SATURNOWEB',
+				'signin' => '?url=home/signin',
+				'signinText' => 'Entrar',
+				'signupText' => 'Registrar',
 				'back' => '?url=home/index',
 				'action' => '?url=home/signupForm',
 				'method' => 'post',
 				'formName' => 'signupForm',
 				'emailInputId' => 'email',
 				'emailInputName' => 'email',
+				'emailInputPlaceHolderText' => 'Email',
 				'passwordInputId' => 'password',
 				'passwordInputName' => 'password',
+				'passwordInputPlaceHolderText' => 'Senha',
 				'passwordConfirmationInputId' => 'passwordConfirmation',
 				'passwordConfirmationInputName' => 'passwordConfirmation',
+				'passwordConfirmationInputPlaceHolderText' => 'Repita a senha',
 				'submit' => 'submitSignupForm',
 			];
 

@@ -1,5 +1,4 @@
 <?php
-
 	$dbDriver = getenv ('DBDRIVER');
 	$hostname = getenv ('HOSTNAME');
 	$username = getenv ('PG_USER');
