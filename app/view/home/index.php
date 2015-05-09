@@ -1,7 +1,3 @@
-<?php
-	session_start ();
-?>
-
 <html>
 	<head>
 		<meta charset='utf-8'>
@@ -45,6 +41,8 @@
 			<?php
 				$professors = $data['professorsList'];
 				$professorsRatings = $data['professorsRatings'];
+				$professorsRated = $data['professorsRated'];
+				$professorsTotalRatings = $data['professorsTotalRatings'];
 
 				foreach ($professors as $professor) {
 					$professorRating = $professorsRatings[$professor['id']];
@@ -54,6 +52,7 @@
 						echo '</td>';
 						echo '<td>';
 							echo '<ul>';
+								echo "<li>Avaliações feitas: ".$professorsTotalRatings[$professor['id']]."</li>";
 								echo "<li>$data[generalText]: $professorRating[general]</li>";
 								echo "<li>$data[knowledgeText]: $professorRating[knowledge]</li>";
 								echo "<li>$data[didacticismText]: $professorRating[didacticism]</li>";
@@ -64,8 +63,13 @@
 						echo '</td>';
 						echo "<td class='centralizedTdContent'>";
 							if (isset ($_SESSION['loggedin']) and $_SESSION['loggedin'] == true) {
-								echo '<p>'.$data['notRatedText'].'</p><br>';
-								echo '<a href="'.$data['rateLink'].'/'.$professor['id'].'">'.$data['rateText'].'</a>';
+								if (isset($professorsRated[$professor['id']])) {
+									echo '<p>Você já avaliou esse professor,<br> próximo!</p>';
+								}
+								else {
+									echo '<p>'.$data['notRatedText'].'</p><br>';
+									echo '<a href="'.$data['rateLink'].'/'.$professor['id'].'">'.$data['rateText'].'</a>';
+								}
 							}
 							else {
 								echo 'Você precisa estar logado para avaliar os professores.';

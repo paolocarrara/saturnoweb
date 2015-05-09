@@ -137,6 +137,39 @@
 			}
 			return $allCalculatedProfessorsRatings;
 		}
+
+		public static function getAlreadyRatedProfessorsByUserId ($userId) {
+			require '../app/database.php';
+			
+			$statement = $connection->prepare ('SELECT p_id FROM ratings where s_id = :s_id');
+			$statement->execute ( array ('s_id' => $userId) );
+
+			$professorsIds = [];
+			$professors = $statement->fetchAll ();
+			foreach ($professors as $professorId) {
+				$professorsIds[$professorId[0]] = true;
+			}
+			
+			return $professorsIds;
+		}
+
+		public static function getProfessorsTotalRatings () { /* Terminar essa função */
+			require '../app/database.php';
+			
+			$statement = $connection->prepare ('SELECT id FROM professors');
+			$statement-> execute ();
+			$professorsIds = $statement->fetchAll ();
+
+			$professorsTotals = [];
+			$statement = $connection->prepare ('SELECT COUNT(p_id) FROM ratings where p_id = :p_id');
+			foreach ($professorsIds as $professorId) {
+				$statement->execute ( array ('p_id' => $professorId[0]) );
+				$professors = $statement->fetchAll ();
+				$professorsTotals[$professorId[0]] = $professors[0][0];
+			}
+			return $professorsTotals;
+		
+		}
 	}
 
 ?>

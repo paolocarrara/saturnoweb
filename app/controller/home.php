@@ -6,11 +6,18 @@
 	class Home extends Controller {
 
 		public function index () {
+			session_start ();
 
-			$model = $this->model ('professors');	
+			$model = $this->model ('professors');
+			$this->model ('student');
 
 			$professorsList = $model->getProfessors ();
 			$professorsRatings = $model->getProfessorsRatings ();
+			$professorsTotalRatings = $model->getProfessorsTotalRatings ();
+			$professorsRated = [];
+			if (isset ($_SESSION['loggedin']) and $_SESSION['loggedin'] == true) {
+				$professorsRated = $model->getAlreadyRatedProfessorsByUserId ( Student::getStudentIdByEmail ($_SESSION['email']) );
+			}
 
 			$data = [
 				'brandName' => 'SATURNOWEB',
@@ -33,7 +40,9 @@
 				'rateText' => 'Avaliar!',
 				'rateLink' => '?url=home/rate',
 				'professorsList' => $professorsList,
-				'professorsRatings' => $professorsRatings
+				'professorsRatings' => $professorsRatings,
+				'professorsRated' => $professorsRated,
+				'professorsTotalRatings' => $professorsTotalRatings,
 			];
 
 			$this->view ('home/index', $data);

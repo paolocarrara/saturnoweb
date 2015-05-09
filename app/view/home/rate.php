@@ -13,7 +13,7 @@
 
 	<body>
 
-	<div id="container" style="width: 80%; margin: 0em auto">
+	<div class="container" style="width: 80%; margin: 0em auto">
 
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
